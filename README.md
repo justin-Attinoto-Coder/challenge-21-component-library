@@ -1,6 +1,18 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Component Library++ 🎨
 
-## Getting Started
+A beautiful, modern toast notification component library built with Next.js, TypeScript, Tailwind CSS, and Framer Motion.
+
+## ✨ Features
+
+- 🎯 **4 Toast Variants**: Success, Warning, Information, and Error
+- 🎭 **Smooth Animations**: Powered by Framer Motion
+- 🎨 **Beautiful Gradients**: Modern, eye-catching design
+- ⚙️ **Fully Customizable**: Easy to adapt to your needs
+- ♿ **Accessible**: Built with accessibility best practices
+- 📱 **Responsive**: Works perfectly on all devices
+- 🔧 **TypeScript**: Fully typed for better DX
+
+## 🚀 Getting Started
 
 First, run the development server:
 
@@ -16,11 +28,89 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎯 What's Included
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Toast Component** - Versatile notification system with multiple variants
+- **Toast Provider** - Context-based toast management
+- **useToast Hook** - Easy programmatic toast creation
+- **Demo Page** - Interactive examples showcasing all features
 
-## Learn More
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org) with App Router
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [Lucide React](https://lucide.dev/)
+- **Utilities**: clsx, tailwind-merge, class-variance-authority
+
+## 📦 Project Structure
+
+```plaintext
+src/
+├── app/
+│   ├── page.tsx          # Demo page with examples
+│   ├── layout.tsx        # Root layout
+│   └── globals.css       # Global styles
+├── components/
+│   └── ui/
+│       └── toast.tsx     # Toast component & provider
+└── lib/
+    └── utils.ts          # Utility functions
+```
+
+## 🎨 Usage Example
+
+```tsx
+import { ToastProvider, useToast } from '@/components/ui/toast'
+
+function MyComponent() {
+  const { addToast } = useToast()
+
+  const showSuccess = () => {
+    addToast({
+      variant: 'success',
+      title: 'Success!',
+      description: 'Your action completed successfully.'
+    })
+  }
+
+  return <button onClick={showSuccess}>Show Toast</button>
+}
+
+// Wrap your app with ToastProvider
+export default function App() {
+  return (
+    <ToastProvider>
+      <MyComponent />
+    </ToastProvider>
+  )
+}
+```
+
+## 🚀 Deployment
+
+### Deploy to Vercel (Recommended)
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/YOUR_USERNAME/challenge-21-component-library)
+
+1. Push your code to GitHub
+2. Go to [vercel.com](https://vercel.com)
+3. Import your repository
+4. Deploy!
+
+### Deploy to Netlify
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/YOUR_USERNAME/challenge-21-component-library)
+
+1. Push your code to GitHub
+2. Go to [netlify.com](https://netlify.com)
+3. Import your repository
+4. Deploy!
+
+See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed deployment instructions.
+
+## 📝 Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
